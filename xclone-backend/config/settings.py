@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'drf_spectacular',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'rest_framework',
     'api',
 ]
@@ -136,4 +137,16 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'XCLONE API',
+    'DESCRIPTION': 'XClone is a full-stack social media web application designed to replicate the core functionality, user interface, and real-time interaction model of X (formerly Twitter).',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_DIST': 'SIDECAR',  # shorthand to use the sidecar instead
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+    # OTHER SETTINGS
 }

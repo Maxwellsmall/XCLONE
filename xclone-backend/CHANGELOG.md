@@ -6,4 +6,4 @@
 - `Tweet` model and feed list view (`/api/tweets/`).
 
 ### Changed
-- Refactored `User` model to use email instead of username for login.
+- Updated ``
