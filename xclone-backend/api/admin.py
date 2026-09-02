@@ -9,7 +9,7 @@ class TweetMediaInline(admin.TabularInline):
 
 @admin.register(Tweet)
 class TweetAdmin(admin.ModelAdmin):
-    list_display = ['id', 'author', 'content', 'created_at', 'updated_at']
+    list_display = ['id', 'parent', 'author', 'content', 'created_at', 'updated_at']
     list_filter = ['created_at', 'updated_at']
     search_fields = ['content', 'author__username']
     inlines = [TweetMediaInline]

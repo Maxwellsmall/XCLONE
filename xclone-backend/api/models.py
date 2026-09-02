@@ -8,6 +8,8 @@ class Tweet(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
+
     def __str__(self):
         return f"{self.author.username} : {self.content[:50]}..."
 
