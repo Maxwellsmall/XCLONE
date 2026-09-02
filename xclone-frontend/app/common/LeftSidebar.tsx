@@ -1,6 +1,7 @@
 import React from 'react'
-import { Home, Search, Bell, Mail, User, Bookmark, Ellipsis } from 'lucide-react';
+import { Home, Search, Bell, Mail, User, Bookmark, Ellipsis, MessageCircle } from 'lucide-react';
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link"
 
 const LeftSidebar = () => {
   return (
@@ -10,38 +11,38 @@ const LeftSidebar = () => {
     <FaXTwitter className="h-8 w-8 font-bold text-white" />
      </div>
       <nav>
-          <a href="" className='flex items-center gap-3 my-5'>
+          <Link href="/Routes/home" className='flex items-center gap-3 my-5'>
             <Home className="h-6 w-6 text-white font-bold" />
              <span className="text-[20px] font-bold">Home</span>
-          </a>
-          <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+          <Link href="/Routes/explore" className='flex items-center gap-3 my-5'>
             <Search className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Explore</span>
-          </a>
-          <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+          <Link href="/Routes/notification" className='flex items-center gap-3 my-5'>
             <Bell className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Notifications</span>
-          </a>
-          <a href="" className='flex items-center gap-3 my-5'>
-            <Mail className="h-6 w-6 text-white font-bold"/>
+          </Link>
+          <Link href="/Routes/chat" className='flex items-center gap-3 my-5'>
+            <MessageCircle className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Chat</span>
-          </a>
-          <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+          <Link href="/Routes/grok" className='flex items-center gap-3 my-5'>
             <Mail className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Grok</span>
-          </a>
-           <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+           <Link href="/Routes/history" className='flex items-center gap-3 my-5'>
             <Bookmark className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">History</span>
-          </a>
-           <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+           <Link href="/Routes/profile" className='flex items-center gap-3 my-5'>
             <User className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Profile</span>
-          </a>
-           <a href="" className='flex items-center gap-3 my-5'>
+          </Link>
+           <Link href="/more" className='flex items-center gap-3 my-5'>
             <Ellipsis className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">More</span>
-          </a>
+          </Link>
       </nav>
       <div>
         <button className="px-22 py-3 bg-white rounded-full text-black font-bold">Post</button>
