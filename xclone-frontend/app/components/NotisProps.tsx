@@ -25,6 +25,7 @@ const NotisProps: React.FC<Props> = ({Image,Text, Icon, paragraph}) => {
              <button>
                 <Ellipsis className='text-gray-500'/>
              </button>
+             
         </div>
        </div>
             <div className='w-full px-9 py-2 flex flex-col items-start justify-center'>
