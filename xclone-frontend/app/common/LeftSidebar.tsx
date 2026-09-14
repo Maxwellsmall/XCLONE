@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, Search, Bell, Mail, User, Bookmark, Ellipsis, MessageCircle } from 'lucide-react';
+import { Home, Search, Bell, Mail, User, Bookmark, Ellipsis, MessageCircle, UserPlus } from 'lucide-react';
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link"
 
@@ -19,9 +19,15 @@ const LeftSidebar = () => {
             <Search className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Explore</span>
           </Link>
+
+
           <Link href="/Routes/notification" className='flex items-center gap-3 my-5'>
             <Bell className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Notifications</span>
+          </Link>
+           <Link href="/Routes/history" className='flex items-center gap-3 my-5'>
+            <UserPlus className="h-6 w-6 text-white font-bold"/>
+            <span className="text-[20px] font-bold">Follow</span>
           </Link>
           <Link href="/Routes/chat" className='flex items-center gap-3 my-5'>
             <MessageCircle className="h-6 w-6 text-white font-bold"/>
@@ -31,10 +37,7 @@ const LeftSidebar = () => {
             <Mail className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Grok</span>
           </Link>
-           <Link href="/Routes/history" className='flex items-center gap-3 my-5'>
-            <Bookmark className="h-6 w-6 text-white font-bold"/>
-            <span className="text-[20px] font-bold">History</span>
-          </Link>
+          
            <Link href="/Routes/profile" className='flex items-center gap-3 my-5'>
             <User className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Profile</span>
