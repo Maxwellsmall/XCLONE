@@ -11,34 +11,34 @@ const LeftSidebar = () => {
     <FaXTwitter className="h-8 w-8 font-bold text-white" />
      </div>
       <nav>
-          <Link href="/Routes/home" className='flex items-center gap-3 my-5'>
+          <Link href="/home" className='flex items-center gap-3 my-5'>
             <Home className="h-6 w-6 text-white font-bold" />
              <span className="text-[20px] font-bold">Home</span>
           </Link>
-          <Link href="/Routes/explore" className='flex items-center gap-3 my-5'>
+          <Link href="/explore" className='flex items-center gap-3 my-5'>
             <Search className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Explore</span>
           </Link>
 
 
-          <Link href="/Routes/notification" className='flex items-center gap-3 my-5'>
+          <Link href="/notification" className='flex items-center gap-3 my-5'>
             <Bell className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Notifications</span>
           </Link>
-           <Link href="/Routes/history" className='flex items-center gap-3 my-5'>
+           <Link href="/history" className='flex items-center gap-3 my-5'>
             <UserPlus className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Follow</span>
           </Link>
-          <Link href="/Routes/chat" className='flex items-center gap-3 my-5'>
+          <Link href="/chat" className='flex items-center gap-3 my-5'>
             <MessageCircle className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Chat</span>
           </Link>
-          <Link href="/Routes/grok" className='flex items-center gap-3 my-5'>
+          <Link href="/grok" className='flex items-center gap-3 my-5'>
             <Mail className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Grok</span>
           </Link>
           
-           <Link href="/Routes/profile" className='flex items-center gap-3 my-5'>
+           <Link href="/profile" className='flex items-center gap-3 my-5'>
             <User className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Profile</span>
           </Link>
