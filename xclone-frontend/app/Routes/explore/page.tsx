@@ -13,9 +13,7 @@ const page = () => {
         flex items-center justify-start rounded-full px-2 gap-1 mx-5 w-full py-2 outline-2 outline-gray-500` 
         }>
         <Search className='w-[20px] h-[20px] text-gray-500'/>
-        <input type="text" className='outline-0' placeholder='search' onClick={() => setISActive(true)
-          
-        } />
+        <input type="text" className='outline-0' placeholder='search' />
         </div>
         <Settings/>
       </div>
