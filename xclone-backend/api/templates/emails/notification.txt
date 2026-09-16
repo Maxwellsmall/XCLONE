@@ -1,0 +1,11 @@
+{{ subject }}
+
+{{ body }}
+
+{% if preview_text %}
+"{{ preview_text }}"
+{% endif %}
+
+{% if action_url %}
+{{ action_label|default:"View on X clone" }}: {{ action_url }}
+{% endif %}

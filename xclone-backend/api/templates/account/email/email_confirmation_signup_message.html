@@ -1,0 +1,18 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<h2 style="margin-top: 0; color: #0f1419; font-size: 18px;">Confirm your email address</h2>
+<p style="color: #536471;">Thanks for creating an X Clone account! Please verify your email address to get started.</p>
+
+<table border="0" cellspacing="0" cellpadding="0" style="margin: 24px 0;">
+    <tr>
+        <td align="center" style="border-radius: 9999px; background-color: #1d9bf0;">
+            <a href="{{ activate_url }}" target="_blank"
+                style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; border-radius: 9999px; padding: 12px 24px; display: inline-block;">
+                Confirm Email
+            </a>
+        </td>
+    </tr>
+</table>
+<p style="font-size: 12px; color: #536471;">If you didn't request this, you can ignore this email.</p>
+{% endblock %}

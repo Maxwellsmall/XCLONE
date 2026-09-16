@@ -19,10 +19,16 @@ from django.urls import path, include
 from api import views
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
+from dj_rest_auth.registration.views import VerifyEmailView, ConfirmEmailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('/', views.index, name='index'),
+
+    path('api/auth/', include('dj_rest_auth.urls')),
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/auth/account-confirm-email/<str:key>/', ConfirmEmailView.as_view(), name='account_confirm_email'),
+    path('api/auth/account-confirm-email/', VerifyEmailView.as_view(), name='account_email_verification_sent'),
+
     path('api/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/auth-token/', obtain_auth_token, name='api_token_auth'),
