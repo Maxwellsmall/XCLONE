@@ -1,8 +1,21 @@
 from rest_framework import serializers
 from .models import Tweet, TweetMedia, Like, Retweet, Bookmark
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 user = get_user_model()
+
+class RegisterSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'password']
+
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
+        
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

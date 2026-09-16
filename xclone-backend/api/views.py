@@ -1,10 +1,14 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from django.db.models import Count, Q, Exists, OuterRef
 from .models import Tweet, Like, Retweet, Bookmark
 from .serializers import TweetSerializer
 
 
+
+
 class TweetViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = TweetSerializer
 
     def get_queryset(self):
