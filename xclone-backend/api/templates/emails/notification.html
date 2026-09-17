@@ -1,0 +1,26 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<h2 style="margin-top: 0; color: #0f1419; font-size: 18px;">{{ title }}</h2>
+<p style="color: #536471;">{{ body }}</p>
+
+{% if preview_text %}
+<div
+    style="background-color: #f7f9fa; border-left: 3px solid #1d9bf0; padding: 12px 16px; margin: 16px 0; border-radius: 4px; color: #0f1419;">
+    <em>"{{ preview_text }}"</em>
+</div>
+{% endif %}
+
+{% if action_url %}
+<table border="0" cellspacing="0" cellpadding="0" style="margin: 24px 0;">
+    <tr>
+        <td align="center" style="border-radius: 9999px; background-color: #1d9bf0;">
+            <a href="{{ action_url }}" target="_blank"
+                style="font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; border-radius: 9999px; padding: 10px 20px; display: inline-block;">
+                {{ action_label|default:"View on X Clone" }}
+            </a>
+        </td>
+    </tr>
+</table>
+{% endif %}
+{% endblock %}
