@@ -18,7 +18,7 @@ const StaticLayout = ({children}: StaticLayoutProps) => {
       {/* <main className="flex w-full items-start ml-74 border-b-2 border-gray-900 border-r-2 border-gray-500">
         {children}
       </main> */}
-  <main className="ml-74 w-full min-h-screen border-r border-zinc-800">
+  <main className="ml-74 w-full min-h-screen border-r border-zinc-800 min-w-0">
         {children}
       </main>
 
