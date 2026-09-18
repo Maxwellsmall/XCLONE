@@ -12,9 +12,9 @@ const Followprops: React.FC<Props> = ({image, name, username, description}) => {
   return (
     <>
     <div className='flex flex-col w-full items-center justify-center'>
-        <div className='flex flex-col w-full mx-5'>
-            <div>
-                <img src={image} alt="" className='bg-gray-500 rounded-full' />
+        <div className='flex w-full items-start justify-between gap-5 py-4'>
+            <div className="flex items-center justify-center w-[50px] h-[50px]">
+                <img src={image} alt="" className='bg-gray-500 rounded-full w-10 h-10' />
             </div>
             <div className='flex items-start flex-col w-full'>
                 <h1>{name}</h1>
@@ -22,8 +22,7 @@ const Followprops: React.FC<Props> = ({image, name, username, description}) => {
                 <p>{description}</p>
             </div>
             <div className='flex justify-center justify-center'>
-            <button className='py-2 px-3 text-black bg-white rounded-full'>Follow</button>
-
+            <button className='py-1 px-5 text-black bg-white rounded-full'>Follow</button>
             </div>
         </div>
     </div>

@@ -12,25 +12,33 @@ const page = () => {
 
   const followdata = [
     {
+      id: 1,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast"
+      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      image: "/vercel.svg"
   },
   {
+    id: 2,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast"
+      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      image: "/vercel.svg"
   },
   {
+    id: 3,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast"
+      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      image: "/vercel.svg"
   },
 
   {
+    id: 4,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast"
+description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      image: "/vercel.svg"
   },
   ]
 
@@ -56,12 +64,12 @@ const page = () => {
         </div>
       </div>
       <div className="border-t-2 border-gray-900 w-full"/>
-      <div className="flex w-full items-start flex-col">
+      <div className="flex w-full items-start flex-col bg-red-500">
           <div className='flex w-full items-start flex-col mx-5 py-2'>
               <h1 className="font-semibold text-[25px] text-white">Suggested for you</h1>
-                <div className='w-full flxx'>
-                  {followdata.map((items) => (
-                      <div>
+                <div className='w-flex-col gap-4'>
+                  {followdata.map((items, id) => (
+                      <div key={items.id} className='mb-4'>
                         <Follow
                         name={items.name}
                         username={items.username}
