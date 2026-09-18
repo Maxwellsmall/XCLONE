@@ -3,6 +3,8 @@ import Header from "@/app/components/ExploreHeader"
 import MatchCard from "@/app/components/MatchCard"
 import { ChevronRight, Ellipsis } from "lucide-react"
 import Follow from "@/app/components/Followprops"
+import Post from "@/app/common/Posts"
+
 
 const Explore = () => {
 
@@ -140,7 +142,7 @@ const Explore = () => {
             </div>
                     <div className="border-t-1 border-gray-600 my-3"/>
 
-         <div className="flex flex-col gap-4">
+         <div className="flex flex-col gap-4 px-4">
                     <h1 className="font-semibold text-[22px] text-white">Who to follow </h1>
                     <div className='flex flex-col gap-3'>
                       {followdata.map((item) => (
@@ -153,8 +155,13 @@ const Explore = () => {
                         />
                       ))}
                     </div>
-                  </div>
+            </div>
+              <div className="border-t-1 border-gray-600 my-3"/>
 
+              <div className="px-4">
+                   <h1 className="font-semibold text-[22px] text-white">Posts for you </h1>
+                    <Post/>
+              </div>  
      </div>
     </div>
     </>
