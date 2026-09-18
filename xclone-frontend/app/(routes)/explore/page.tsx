@@ -2,8 +2,48 @@
 import Header from "@/app/components/ExploreHeader"
 import MatchCard from "@/app/components/MatchCard"
 import { ChevronRight, Ellipsis } from "lucide-react"
+import Follow from "@/app/components/Followprops"
 
 const Explore = () => {
+
+  const followdata = [
+    {
+      id: 1,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+    {
+      id: 2,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 3,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 4,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 5,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+    
+  ]
 
   return (
     <>
@@ -98,6 +138,22 @@ const Explore = () => {
               </div>
 
             </div>
+                    <div className="border-t-1 border-gray-600 my-3"/>
+
+         <div className="flex flex-col gap-4">
+                    <h1 className="font-semibold text-[22px] text-white">Who to follow </h1>
+                    <div className='flex flex-col gap-3'>
+                      {followdata.map((item) => (
+                        <Follow
+                          key={item.id}
+                          name={item.name}
+                          username={item.username}
+                          image={item.image}
+                          description={item.description}
+                        />
+                      ))}
+                    </div>
+                  </div>
 
      </div>
     </div>

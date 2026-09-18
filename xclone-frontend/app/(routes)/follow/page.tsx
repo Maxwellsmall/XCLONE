@@ -3,11 +3,119 @@
 import { ArrowLeft, Settings } from 'lucide-react'
 import React, { useState } from 'react'
 import Follow from "@/app/components/Followprops"
+import Subcribe from "@/app/components/SubscribeProps"
 
 const Page = () => {
   const [isActive, setIsActive] = useState(false)
 
   const followdata = [
+    {
+      id: 1,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+    {
+      id: 2,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 3,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 4,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 5,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 6,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 7,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 8,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 9,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 10,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 11,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 12,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 13,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 13,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 15,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+  ]
+  const subscribedata = [
     {
       id: 1,
       name: "Maxwell Edunfunke",
@@ -162,9 +270,18 @@ const Page = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col gap-4">
-            <h1 className="font-semibold text-[22px] text-white">Creators for you</h1>
-            <p className="text-gray-400 text-sm">No creators found right now.</p>
+         <div className="flex flex-col gap-4">
+            <div className='flex flex-col gap-3'>
+              {subscribedata.map((item) => (
+                <Subcribe
+                  key={item.id}
+                  name={item.name}
+                  username={item.username}
+                  image={item.image}
+                  description={item.description}
+                />
+              ))}
+            </div>
           </div>
         )}
       </div>
