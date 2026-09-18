@@ -1,13 +1,10 @@
 "use client"
 
 import { ArrowLeft, Settings } from 'lucide-react'
-import React from 'react'
-import { useState } from 'react'
-import Follow from "@/app/components/followprops"
+import React, { useState } from 'react'
+import Follow from "@/app/components/Followprops"
 
-
-
-const page = () => {
+const Page = () => {
   const [isActive, setIsActive] = useState(false)
 
   const followdata = [
@@ -15,160 +12,164 @@ const page = () => {
       id: 1,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
-    id: 2,
+    },
+    {
+      id: 2,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
-    id: 3,
+    },
+      {
+      id: 3,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-
-  {
-    id: 4,
+    },
+      {
+      id: 4,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 5,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 6,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 7,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  
-  {
+    },
+      {
       id: 8,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 9,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 10,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 11,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  
-  {
+    },
+      {
       id: 12,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 13,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
-      id: 14,
+    },
+      {
+      id: 13,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
-  {
+    },
+      {
       id: 15,
       name: "Maxwell Edunfunke",
       username: "@web3Threat",
-      description: "i am a fukkstack web developer and also a web3 enthusiast building so big that in the coming year alot of peop,e will know itttttttt and it wqill be so popular that alot of people want to use",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
       image: "/vercel.svg"
-  },
+    },
   ]
 
   return (
-    <div className='w-full flex flex-col'>
-      <div className="flex justify-between items-center w-full bg-black/80 py-2 px-3 sticky top-0">
+    <div className='w-full flex flex-col min-h-screen bg-black text-white'>
+      <div className="flex justify-between items-center w-full bg-black/80 py-2 px-3 sticky top-0 z-10 backdrop-blur-md">
         <div className='flex gap-5 items-center'>
-          <ArrowLeft/>
-        <h1 className='font-bold text-[22px]'>Follow</h1>
+          <ArrowLeft className="cursor-pointer" />
+          <h1 className='font-bold text-[22px]'>Follow</h1>
         </div>
-        <Settings/>
+        <Settings className="cursor-pointer" />
       </div>
-      <div className='flex justify-between items-center mx-3 my-2'>
-        <div className='flex justify-center items-center w-[50%] my-3' onClick={() => setIsActive(false)}>
 
-        <h1 className={`text-gray-400 cursor-pointer 
-          ${!isActive ? "border-b-4 border-blue-500 pb-3" : "border-0"}
-          `}>Who to follow</h1>
-            
-            {!isActive && (
-              <div className="flex w-full items-start flex-col px-3">
-          <div className='flex w-full items-start flex-col max-w-[600px]'>
-              <h1 className="font-semibold text-[25px] text-white">Suggested for you</h1>
-                <div className='w-flex-col gap-4'>
-                  {followdata.map((items, id) => (
-                      <div key={items.id} className='mb-4'>
-                        <Follow
-                        name={items.name}
-                        username={items.username}
-                        image={items.image}
-                        description={items.description}
-                        />
-                      </div>
-                  ))
+      <div className='flex justify-between items-center border-b border-gray-800'>
+        <div 
+          className='flex justify-center items-center w-1/2 py-3 cursor-pointer hover:bg-zinc-900 transition'
+          onClick={() => setIsActive(false)}
+        >
+          <h1 className={`font-semibold ${!isActive ? "text-white border-b-4 border-blue-500 pb-2" : "text-gray-400"}`}>
+            Who to follow
+          </h1>
+        </div>
 
-                  }
-                </div>
+        <div 
+          className='flex justify-center items-center w-1/2 py-3 cursor-pointer hover:bg-zinc-900 transition'
+          onClick={() => setIsActive(true)}
+        >
+          <h1 className={`font-semibold ${isActive ? "text-white border-b-4 border-blue-500 pb-2" : "text-gray-400"}`}>
+            Creators to follow
+          </h1>
+        </div>
+      </div>
+
+      <div className="flex flex-col w-full px-4 py-3 max-w-[600px]">
+        {!isActive ? (
+          <div className="flex flex-col gap-4">
+            <h1 className="font-semibold text-[22px] text-white">Suggested for you</h1>
+            <div className='flex flex-col gap-3'>
+              {followdata.map((item) => (
+                <Follow
+                  key={item.id}
+                  name={item.name}
+                  username={item.username}
+                  image={item.image}
+                  description={item.description}
+                />
+              ))}
+            </div>
           </div>
+        ) : (
+          <div className="flex flex-col gap-4">
+            <h1 className="font-semibold text-[22px] text-white">Creators for you</h1>
+            <p className="text-gray-400 text-sm">No creators found right now.</p>
+          </div>
+        )}
       </div>
-            )}
-
-        </div>
-        <div className='flex justify-center items-center w-[50%] my-3' onClick={() => setIsActive(true)}>
-
-        <h1 className={`text-gray-400 cursor-pointer ${isActive ? "border-b-4 border-blue-500 pb-3" : "border-0"}`}>Creators to follow</h1>
-        </div>
-      </div>
-      <div className="border-t-2 border-gray-900 w-full"/>
-      
     </div>
   )
 }
 
-export default page
+export default Page
