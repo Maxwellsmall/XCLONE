@@ -19,5 +19,23 @@ pip install -r requirements.txt
 # Migrate to sqlite on local
 python manage.py migrate
 
+# Start development server
+python manage.py runserver
 
 ```
+
+# DOCUMENTETION
+
+The API documentation uses open ai swagger-ui
+
+```python
+# Swagger UI
+127.0.0.1:8000/api/schema/swagger-ui
+```
+
+```python 
+# Redoc UI
+127.0.0.1:8000/api/schema/redoc
+```
+
+## Available Endpoints

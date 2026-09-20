@@ -8,3 +8,6 @@
 ## Core Decisions
 - **Single App Strategy:** Using `api` app for MVP to minimize join overhead.
 - **Tweet Hierarchy:** Self-referencing FK on `Tweet` model handles replies and retweets.
+
+## Backend Models
+- **Tweets: roburst tweets system with replies, retweets**

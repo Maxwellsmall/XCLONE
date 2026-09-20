@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Tweet, TweetMedia, Like, Retweet, Bookmark
+from .models import Tweet, TweetMedia, Like, Retweet, Bookmark, Follow
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
-user = get_user_model()
+User = get_user_model()
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -19,8 +19,43 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = user
+        model = User
         fields = ['id', 'username']
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    followers_count = serializers.SerializerMethodField()
+    following_count =serializers.SerializerMethodField()
+    tweets_count = serializers.SerializerMethodField()
+    is_following = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = [
+            'id',
+            'username',
+            'first_name', 
+            'last_name', 'email', 
+            'followers_count', 
+            'following_count', 
+            'tweets_count', 
+            'is_following', 
+            'date_joined', 
+            'last_login']
+
+    def get_followers_count(self, obj):
+        return obj.followers.count()
+
+    def get_following_count(self, obj):
+        return obj.following.count()
+
+    def get_tweets_count(self, obj):
+        return obj.tweets.filter(tweet_type=Tweet.TweetType.ORIGINAL).count()
+
+    def get_is_following(self, obj):
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            return Follow.objects.filter(follower=request.user, following=obj).exists()
+        return False
 
 
 class TweetMediaSerializer(serializers.ModelSerializer):
