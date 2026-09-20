@@ -1,0 +1,42 @@
+.breadcrumb {
+    background-color: transparent !important;
+}
+
+.breadcrumb-item a {
+    color: #1d9bf0 !important;
+    /* Twitter blue accent */
+}
+
+.breadcrumb-item.active {
+    color: #e7e9ea !important;
+}
+
+#changelist-search {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+#changelist-search .d-flex:not(.input-group),
+#changelist-search .search-filters {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: auto !important;
+}
+
+#changelist-search .input-group{
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    max-width: 500px !important;
+}
+
+#changelist-search .input-group input[type="search"],
+#changelist-search .input-group input[type="text"] {
+    flex: 1 !important;
+}

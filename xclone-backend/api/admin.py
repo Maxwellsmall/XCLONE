@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tweet, TweetMedia, Like, Retweet, Bookmark
+from .models import Follow, Tweet, TweetMedia, Like, Retweet, Bookmark
 
 # Register your models here.
 class TweetMediaInline(admin.TabularInline):
@@ -37,7 +37,11 @@ class TweetAdmin(admin.ModelAdmin):
     @admin.display(description='Retweets')
     def retweets_count(self, obj):
         return obj.retweets.count()
-    
+
+@admin.register(Follow)
+class FollowAdmin(admin.ModelAdmin):
+    list_display = ['id', 'follower', 'following', 'created_at']
+    search_fields = ['follower__username', 'following__username']
 
 @admin.register(TweetMedia)
 class TweetMediaAdmin(admin.ModelAdmin):

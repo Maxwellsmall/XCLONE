@@ -75,3 +75,40 @@ class Bookmark(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['user', 'tweet'], name='unique_user_tweet_bookmark')
         ]
+
+class Notification(models.Model):
+    class NotificationType(models.TextChoices):
+        FOLLOW = 'FOLLOW', 'Follow'
+        LIKE = 'LIKE', 'Like'
+        RETWEET = 'RETWEET', 'Retweet'
+        REPLY = 'REPLY', 'Reply'
+
+    recipient = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        related_name='notifications'
+    )
+    sender = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        related_name='sent_notifications'
+    )
+    notification_type = models.CharField(
+        max_length=10, 
+        choices=NotificationType.choices
+    )
+    tweet = models.ForeignKey(
+        'Tweet', 
+        on_delete=models.CASCADE, 
+        null=True, 
+        blank=True, 
+        related_name='notifications'
+    )
+    is_read = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.sender.username} -> {self.recipient.username} ({self.notification_type})"

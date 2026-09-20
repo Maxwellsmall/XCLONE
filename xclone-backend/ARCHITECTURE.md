@@ -41,3 +41,6 @@ graph TD
 
 ## Backend Models
 - **Tweets: roburst tweets system with replies, retweets**
+- **Notification: notification on tweets, retweets, follow, like, bookmark**
+- **Profile: User profile details**
+- **Follow/Unfollow:**

@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,6 +59,48 @@ INSTALLED_APPS = [
 
     'api',
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "XClone Admin",
+    "site_header": "XClone",
+    "site_brand": "Xclone",
+    "welcome_sign": "Welcome to Xclone Admin",
+    "copyright": "Xclone Ltd",
+
+    "search_model": ["auth.User"],
+
+    "topmenu_links": [
+        {"name": "Dashboard", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "API docs", "url": "/api/schema/swagger-ui/", "new_window": True},
+    ],
+
+    "show_sidebar": True, 
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": [],
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "api.Tweet": "fas fa-feather",
+        "api.TweetMedia": "fas fa-photo-video",
+        "api.Follow": "fas fa-user-friends",
+        "api.Like": "fas fa-heart",
+        "api.Retweet": "fas fa-retweet",
+        "api.Bookmark": "fas fa-bookmark",
+    },
+
+    "show_ui_builder": True,
+    "custom_css": "css/admin_custom.css",
+
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar": "navbar-dark navbar-primary",
+    "theme": "darkly",
+    "dark_mode_theme": "darkly", # Choose themes like: darkly, flatly, slate, pulse, cyborg
+}
 
 SITE_ID = 1
 

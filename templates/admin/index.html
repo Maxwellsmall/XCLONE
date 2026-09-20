@@ -1,0 +1,109 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<!-- Include Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container-fluid">
+    <!-- Top Stat Cards -->
+    <div class="row mb-4">
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-info elevation-2">
+                <div class="inner">
+                    <h3>{{ total_users }}</h3>
+                    <p>Total Users</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-success elevation-2">
+                <div class="inner">
+                    <h3>{{ total_tweets }}</h3>
+                    <p>Total Tweets</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-danger elevation-2">
+                <div class="inner">
+                    <h3>{{ total_likes }}</h3>
+                    <p>Total Likes</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning elevation-2">
+                <div class="inner">
+                    <h3>{{ total_retweets }}</h3>
+                    <p>Total Retweets</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-retweet"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Bar Graph Card -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card card-dark elevation-2">
+                <div class="card-header border-0">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-bar mr-1"></i> Tweet Activity (Last 7 Days)
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="activityChart" style="min-height: 250px; height: 250px; max-height: 300px; max-width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Render Default Admin App Tables Below -->
+{{ block.super }}
+
+<!-- Initialize Bar Chart -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById('activityChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ chart_labels|safe }},
+            datasets: [{
+                label: 'Tweets Created',
+                data: {{ chart_data|safe }},
+                backgroundColor: 'rgba(29, 155, 240, 0.75)',
+                borderColor: 'rgba(29, 155, 240, 1)',
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { precision: 0 }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
