@@ -25,7 +25,7 @@ const LeftSidebar = () => {
             <Bell className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Notifications</span>
           </Link>
-           <Link href="/history" className='flex items-center gap-3 my-5'>
+           <Link href="/follow" className='flex items-center gap-3 my-5'>
             <UserPlus className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Follow</span>
           </Link>
