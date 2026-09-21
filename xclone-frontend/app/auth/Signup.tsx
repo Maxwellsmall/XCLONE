@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-black text-white w-full">
+    <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white w-full">
      <div className="flex justify-between items-center w-full h-screen">
         <div className="flex flex-col items-start px-9 justify-center w-[50%]">
           <div className="flex flex-col justify-start my-3">
@@ -39,16 +39,42 @@ export default function Home() {
         className="w-full bg-transparent text-white placeholder:text-gray-500 outline-none text-left"
       />
     </div>
+    <Link href="/home">
     <div className="rounded-full bg-red-400 my-3 flex justify-center items-center py-3 cursor-pointer px-44">
       <button className="disabled text-white">Continue</button>
     </div>
+    </Link>
+        <p className="text-gray-500 text-[14px] text-center my-2">By continuing you agree to our <span className="text-white">Terms of Service Privacy Policy</span> and <br /> <span className="text-white">Cookie Use</span></p>
         </div>
 
 
         <div className="flex flex-col items-center justify-center w-[50%]">
           <X className="text-white w-[500px] h-[500px]"/>
         </div>
+        
      </div>
+     <div className="w-full flex justify-center items-center">
+          <ul className="flex gap-3 my-5">
+            <li className="text-gray-600 text-[12px]">About</li>
+            <li className="text-gray-600 text-[12px]">Get App</li>
+            <li className="text-gray-600 text-[12px]">Grok</li>
+            <li className="text-gray-600 text-[12px]">Help</li>
+            <li className="text-gray-600 text-[12px]">Terms</li>
+            <li className="text-gray-600 text-[12px]">Privacy</li>
+            <li className="text-gray-600 text-[12px]">Cookies</li>
+            <li className="text-gray-600 text-[12px]">Career </li>
+            <li className="text-gray-600 text-[12px]">Ads & Business</li>
+            <li className="text-gray-600 text-[12px]">Developer</li>
+            <li className="text-gray-600 text-[12px]">News</li>
+            <li className="text-gray-600 text-[12px]">Accessibility</li>
+            <li className="text-gray-600 text-[12px]">2026 X corp</li>
+          </ul>
+        </div>
     </main>
   );
 }
+
+
+
+
+
