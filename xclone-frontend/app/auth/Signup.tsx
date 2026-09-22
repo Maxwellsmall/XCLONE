@@ -5,8 +5,11 @@
 
 import { PhoneCall, X } from "lucide-react";
 import Link from "next/link"
+import Modal from "@/app/components/authMOdal"
+import { useState } from "react";
 
 export default function Home() {
+  const [modal, setModal] = useState(false)
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white w-full"
@@ -56,11 +59,9 @@ export default function Home() {
         className="w-full bg-transparent text-white placeholder:text-gray-500 outline-none text-left"
       />
     </div>
-    <Link href="/home">
-    <div className="rounded-full bg-red-400 my-3 flex justify-center items-center py-3 cursor-pointer px-44">
-      <button className="disabled text-white">Continue</button>
+    <div className="rounded-full my-3 flex justify-center items-center py-3 cursor-pointer px-44">
+      <button className="text-white" onClick={() => setModal(true)}>Continue</button>
     </div>
-    </Link>
         <p className="text-gray-500 text-[14px] text-center my-2">By continuing you agree to our <span className="text-white">Terms of Service Privacy Policy</span> and <br /> <span className="text-white">Cookie Use</span></p>
         </div>
 
@@ -160,6 +161,14 @@ export default function Home() {
             <li className="text-gray-600 text-[12px]">2026 X corp</li>
           </ul>
         </div>
+       <div className="w-full flex justify-center items-center ">
+         { modal && (
+          
+          <Modal onClose={() => setModal(false)}/>
+        )
+
+        }
+       </div>
     </main>
   );
 }
