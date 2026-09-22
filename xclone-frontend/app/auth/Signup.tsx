@@ -1,3 +1,5 @@
+"use client"
+
 // app/page.tsx
 // import Image from "@/public/vercel.svg"
 
@@ -5,8 +7,23 @@ import { PhoneCall, X } from "lucide-react";
 import Link from "next/link"
 
 export default function Home() {
+
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white w-full">
+    <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white w-full"
+    onMouseMove={(e) => {
+      const rect = e.currentTarget.getBoundingClientRect()
+
+      const x = ((e.clientX - rect.left) / rect.width) * 100
+      const y = ((e.clientY - rect.top) / rect.height) * 100
+      const xx = ((e.clientX - rect.right) / rect.width) * 100
+      const yy = ((e.clientY - rect.bottom) / rect.height) * 100
+
+      e.currentTarget.style.setProperty("--mouse-x", `${x}%`)
+      e.currentTarget.style.setProperty("--mouse-y", `${y}%`)
+      // e.currentTarget.style.setProperty("--mouse-xx", `${xx}%`)
+      // e.currentTarget.style.setProperty("--mouse-yy", `${yy}%`)
+    }}
+    >
      <div className="flex justify-between items-center w-full h-screen">
         <div className="flex flex-col items-start px-9 justify-center w-[50%]">
           <div className="flex flex-col justify-start my-3">
@@ -49,22 +66,80 @@ export default function Home() {
 
 
         <div className="flex flex-col items-center justify-center w-[50%]">
-          <div className="absolute right-20 top-1/2 -translate-y-1/2 opacity-20 curs">
- <svg
-  viewBox="0 0 24 24"
-  className="w-[500px] h-[500px]"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="0.35"
->
-  <path
-    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.804-7.584-6.636 7.584H.472l8.6-9.83L0 1.153h7.594l5.246 6.932L18.901 1.153Z"
-    fill="none"
-    stroke="currentColor"
-  />
-</svg>
+          
+
+<div className="w-full h-full relative flex items-center justify-center">
+
+  <div
+    className="absolute right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px]"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      className="w-full h-full"
+    >
+
+      <defs>
+
+        <linearGradient
+          id="xBase"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="1"
+        >
+          <stop offset="0%" stopColor="#292929" />
+          <stop offset="100%" stopColor="#292929" />
+        </linearGradient>
+
+        <radialGradient
+          id="cursorGlow"
+          cx="var(--mouse-x, 50%)"
+          cy="var(--mouse-y, 50%)"
+          r="65%"
+        >
+          <stop
+            offset="0%"
+            stopColor="#8a8a8a"
+            stopOpacity="1"
+          />
+
+          <stop
+            offset="50%"
+            stopColor="#555555"
+            stopOpacity="1"
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#292929"
+            stopOpacity="0"
+          />
+        </radialGradient>
+
+      </defs>
+
+
+      <path
+        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.804-7.584-6.636 7.584H.472l8.6-9.83L0 1.153h7.594l5.246 6.932L18.901 1.153Z"
+        fill="none"
+        stroke="url(#xBase)"
+        strokeWidth="0.45"
+      />
+
+      {/* Cursor-following highlight */}
+      <path
+        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.804-7.584-6.636 7.584H.472l8.6-9.83L0 1.153h7.594l5.246 6.932L18.901 1.153Z"
+        fill="none"
+        stroke="url(#cursorGlow)"
+        strokeWidth="0.7"
+      />
+
+    </svg>
+
+  </div>
+
 </div>
-          {/* <X className="text-white w-[500px] h-[500px]"/> */}
         </div>
         
      </div>
