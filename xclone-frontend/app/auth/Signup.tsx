@@ -49,7 +49,22 @@ export default function Home() {
 
 
         <div className="flex flex-col items-center justify-center w-[50%]">
-          <X className="text-white w-[500px] h-[500px]"/>
+          <div className="absolute right-20 top-1/2 -translate-y-1/2 opacity-20 curs">
+ <svg
+  viewBox="0 0 24 24"
+  className="w-[500px] h-[500px]"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="0.35"
+>
+  <path
+    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.804-7.584-6.636 7.584H.472l8.6-9.83L0 1.153h7.594l5.246 6.932L18.901 1.153Z"
+    fill="none"
+    stroke="currentColor"
+  />
+</svg>
+</div>
+          {/* <X className="text-white w-[500px] h-[500px]"/> */}
         </div>
         
      </div>
