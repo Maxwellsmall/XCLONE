@@ -48,7 +48,7 @@ const [usePassword, setUsePassword] = useState(false)
 
       <div>
 
-        <div className="flex px-6 my-5 items-center">
+        <div className="flex px-6 my-3 items-center">
           <ArrowLeft
             onClick={() => setUsePassword(false)}
             className="bg-black rounded-full p-2 cursor-pointer w-9 h-9"
@@ -61,21 +61,119 @@ const [usePassword, setUsePassword] = useState(false)
 
           <div className="flex flex-col gap-2 my-4 mt-8">
 
-            <h1 className="font-bold text-[30px] text-white">
-              Enter your password
+            <h1 className="font-bold text-[35px] text-white">
+              Login
             </h1>
+        
+              <div className="relative w-[400px]">
 
-            <p className="text-[#717171] text-[15px]">
-              Enter your password to continue
-            </p>
+                <input
+                  type="email"
+                  placeholder=" "
+                  className="
+                    peer
+                    w-full
+                    h-[55px]
+                    mt-4
+                    rounded-lg
+                    bg-black
+                    border-2
+                    border-[#45454D]
+                    px-4
+                    pt-5
+                    text-white
+                    outline-none
+                    focus-within:border-blue-500
+                  "
+                />
 
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-[400px] h-[55px] mt-4 rounded-lg bg-black border-2 border-[#45454D] px-4 text-white outline-none focus:border-white"
-            />
+                <label
+                  className="
+                    absolute
+                    left-4
+                    top-[30px]
+                    text-[#717171]
+                    pointer-events-none
+                    transition-all
+                    duration-200
 
+                    peer-focus:top-[23px]
+                    peer-focus:text-[12px]
+                    peer-focus:text-white
+
+                    peer-not-placeholder-shown:top-[23px]
+                    peer-not-placeholder-shown:text-[12px]
+                  "
+                >
+                  Email
+                </label>
+
+              </div>
+              
+                   <div className="relative w-[400px]">
+
+                <input
+                  type="password"
+                  placeholder=" "
+                  className="
+                    peer
+                    w-full
+                    h-[55px]
+                    mt-4
+                    rounded-lg
+                    bg-black
+                    border-2
+                    border-[#45454D]
+                    px-4
+                    pt-5
+                    text-white
+                    outline-none
+                    focus-within:border-blue-500
+                  "
+                />
+
+                <label
+                  className="
+                    absolute
+                    left-4
+                    top-[30px]
+                    text-[#717171]
+                    pointer-events-none
+                    transition-all
+                    duration-200
+
+                    peer-focus:top-[23px]
+                    peer-focus:text-[12px]
+                    peer-focus:text-white
+
+                    peer-not-placeholder-shown:top-[23px]
+                    peer-not-placeholder-shown:text-[12px]
+                  "
+                >
+                  Password
+                </label>
+
+              </div>
+                <button className='text-white font-bold my-1'>Forgot Password?</button>
           </div>
+
+             <div className="w-full flex justify-center items-center">
+
+          <button
+            disabled={isCodeComplete}
+            className={`w-[400px] h-[50px] mt-25 rounded-full ${
+              isCodeComplete
+                ? "bg-white text-black cursor-pointer"
+                : "bg-[#2A2A2A] text-white cursor-not-allowed"
+            }`}
+          >
+            Continue
+          </button>
+
+        </div>
+                <p className="text-gray-500 text-[14px] text-center my-4">By continuing you agree to our <span className="text-white">Terms of Service Privacy Policy</span> and <br /> <span className="text-white">Cookie Use</span></p>
+
+          
 
         </div>
 
