@@ -3,7 +3,8 @@
 // app/page.tsx
 // import Image from "@/public/vercel.svg"
 
-import { PhoneCall, X } from "lucide-react";
+import { PhoneCall, PhoneIncoming, X } from "lucide-react";
+import { FaGoogle, FaApple, } from "react-icons/fa";
 import Link from "next/link"
 import Modal from "@/app/components/authMOdal"
 import { useState } from "react";
@@ -47,15 +48,15 @@ setForm({
 
         <div className="flex flex-col gap-5">
             <div className="flex rounded-full bg-white gap-2 px-28 py-3">
-                <PhoneCall className="flex text-black"/>
+                <PhoneIncoming className="flex text-black"/>
                 <button className="text-black border-0">Continue with phone</button>
           </div>
             <div className="flex rounded-full bg-white gap-2 px-28 py-3">
-                <PhoneCall className="flex text-black"/>
+                <FaGoogle className="flex text-black"/>
                 <button className="text-black border-0">Continue with Google</button>
           </div>
             <div className="flex rounded-full bg-white gap-2 px-28 py-3">
-                <PhoneCall className="flex text-black"/>
+                <FaApple className="flex text-black"/>
                 <button className="text-black border-0">Continue with Apple</button>
           </div>
         </div>
