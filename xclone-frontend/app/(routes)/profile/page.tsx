@@ -48,12 +48,27 @@ const page = () => {
           <div className="w-full h-[200px] bg-gray-500">
 
           </div>
-          <div className='w-full px-2 relative flex justify-between items-start my-3'>
-            <div className='w-[120px] h-[120px] absolute -top-10 left-2 rounded-full bg-gray-600 border-3 border-black'>
+          <div className='w-full px-2 relative flex justify-end items-start my-3'>
+<div className=''>
+              <div className='w-[120px] h-[120px] absolute -top-16 left-4 rounded-full bg-gray-600 border-3 border-black'>
 
             </div>
+            <div className="flex flex-col absolute left-4 top-16">
+            <h3 className="text-white font-bold text-[22px]">
+              Christianiho
+            </h3>
+
+            <p className="text-gray-500 text-[15px]">
+              @Christianiho88
+            </p>
+          </div>
+</div>
+
             <button className='py-2 px-5 bg-black rounded-full border-1 border-gray-500 font-semibold'>Edit Profile</button>
           </div>
+        </div>
+        <div>
+          {/* <p>A full stack developer</p> */}
         </div>
 
     </div>
