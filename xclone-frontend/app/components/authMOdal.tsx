@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import React from 'react'
 import { FaXTwitter } from "react-icons/fa6";
 import { useState, useRef } from 'react';
+import Link from 'next/link'; 
 
 
 interface ModalPRops {
@@ -13,6 +14,7 @@ interface ModalPRops {
 const authMOdal = ({onClose}: ModalPRops) => {
 const [code, setCode] = useState(["", "", "", "", "", ""])
 const inputRefs = useRef<(HTMLInputElement | null)[]>([])
+const [usePassword, setUsePassword] = useState(false)
 
 
 const handleChange = (value: string, index: number) => {
@@ -37,7 +39,19 @@ const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>,
 }
 
 const isCodeComplete = code.every((digit) => digit !== "")
-const [usePassword, setUsePassword] = useState(false)
+const [form, setForm] = useState({
+  email: "", 
+  password: ""
+})
+
+const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setForm({...form,
+      [e.target.name]: e.target.value
+  })
+}
+
+const isFormComplete = form.email.trim() !== "" && form.password.trim() !== "" 
+
 
   return (
   <div className="fixed inset-0 flex justify-center items-center bg-black/50">
@@ -69,7 +83,10 @@ const [usePassword, setUsePassword] = useState(false)
 
                 <input
                   type="email"
-                  placeholder=" "
+                  placeholder=""
+                  name='email'
+                  value={form.email}
+                  onChange={handleFormChange}
                   className="
                     peer
                     w-full
@@ -114,7 +131,10 @@ const [usePassword, setUsePassword] = useState(false)
 
                 <input
                   type="password"
-                  placeholder=" "
+                  placeholder=""
+                  name='password'
+                  value={form.password}
+                  onChange={handleFormChange}
                   className="
                     peer
                     w-full
@@ -159,10 +179,11 @@ const [usePassword, setUsePassword] = useState(false)
 
              <div className="w-full flex justify-center items-center">
 
+        <Link href="/home">
           <button
-            disabled={isCodeComplete}
+            disabled={!isFormComplete}
             className={`w-[400px] h-[50px] mt-25 rounded-full ${
-              isCodeComplete
+              isFormComplete
                 ? "bg-white text-black cursor-pointer"
                 : "bg-[#2A2A2A] text-white cursor-not-allowed"
             }`}
@@ -170,6 +191,7 @@ const [usePassword, setUsePassword] = useState(false)
             Continue
           </button>
 
+        </Link>
         </div>
                 <p className="text-gray-500 text-[14px] text-center my-4">By continuing you agree to our <span className="text-white">Terms of Service Privacy Policy</span> and <br /> <span className="text-white">Cookie Use</span></p>
 
@@ -249,17 +271,19 @@ const [usePassword, setUsePassword] = useState(false)
         </div>
 
         <div className="w-full flex justify-center items-center">
+          <Link href="/home">
 
-          <button
-            disabled={isCodeComplete}
-            className={`w-[400px] h-[50px] mt-52 rounded-full ${
-              isCodeComplete
-                ? "bg-white text-black cursor-pointer"
-                : "bg-[#2A2A2A] text-white cursor-not-allowed"
-            }`}
-          >
-            Continue
-          </button>
+                    <button
+                      disabled={isCodeComplete}
+                      className={`w-[400px] h-[50px] mt-52 rounded-full ${
+                        isCodeComplete
+                          ? "bg-white text-black cursor-pointer"
+                          : "bg-[#2A2A2A] text-white cursor-not-allowed"
+                      }`}
+                    >
+                      Continue
+                    </button>
+          </Link>
 
         </div>
 

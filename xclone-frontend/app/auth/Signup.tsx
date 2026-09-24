@@ -10,6 +10,17 @@ import { useState } from "react";
 
 export default function Home() {
   const [modal, setModal] = useState(false)
+  const [form, setForm] = useState({email: ""})
+
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+setForm({
+  ...form,
+  [e.target.name]: e.target.value
+})
+}
+
+  const isFormComplete = form.email.trim()
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center bg-black text-white w-full"
@@ -56,11 +67,15 @@ export default function Home() {
       <input 
         type="text" 
         placeholder="Email or Username"
+        name="email"
+        value={form.email}
+        onChange={handleChange}
         className="w-full bg-transparent text-white placeholder:text-gray-500 outline-none text-left"
       />
     </div>
-    <div className="rounded-full my-3 flex justify-center items-center py-3 cursor-pointer px-44">
-      <button className="text-white" onClick={() => setModal(true)}>Continue</button>
+    <div className="mt-3">
+    
+      <button className={`w-[400px] h-[50px] rounded-full ${isFormComplete ? "bg-white text-black cursor-pointer" : "bg-[#2A2A2A] text-white cursor-not-allowed"}`} onClick={() => setModal(true)} disabled={!isFormComplete} >Continue</button>
     </div>
         <p className="text-gray-500 text-[14px] text-center my-2">By continuing you agree to our <span className="text-white">Terms of Service Privacy Policy</span> and <br /> <span className="text-white">Cookie Use</span></p>
         </div>
