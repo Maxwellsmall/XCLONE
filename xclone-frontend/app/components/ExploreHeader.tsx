@@ -39,6 +39,7 @@ const ExploreHeader = () => {
                           onClick={() => setIsActiveTab(tab)}
                            className={`cursor-pointer ${activeTab === tab ? "text-white font-bold border-b-4 border-blue-500 pb-3" : "text-gray-500"}`}>{tab}</li>
                       ))}
+                
             </ul>
           </nav>
           <div className='w-full border-t-1 border-gray-900'/>

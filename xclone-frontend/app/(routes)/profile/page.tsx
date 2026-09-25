@@ -1,10 +1,14 @@
-import { Calendar, ChevronRight, Search, X } from 'lucide-react'
-import React from 'react'
+"use client"
+
+import { Calendar, ChevronDown, ChevronRight, Search, X } from 'lucide-react'
+import React, { useState } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 
 
 
 const page = () => {
+  const [activeTab, setActiveTab] = useState<"Posts" | "Replies" | "Reply" | "Media">("Posts")
+
   return (
     <div className="w-full flex flex-col">
 
@@ -83,25 +87,38 @@ const page = () => {
             <button className='cursor-pointer mt-3 py-2 w-[130px] text-[18px] font-bold text-black bg-white rounded-full'>Get Started</button>
         </div>
         </div>
-        <div className='w-full flex items-center justify-center'>
+        <div className='w-full mt-2 flex items-center justify-center'>
           <nav className='w-full flex items-center justify-center'>
             <ul className='flex w-full justify-between items-center'>
-              <div className='flex justify-center items-center w-[25%] py-3 hover:bg-gray-400 cursor-pointer'>
-              <li>Posts</li>
+              <div 
+              onClick={() => setActiveTab("Posts")}
+               className={`flex justify-center items-center w-[25%] py-3 hover:bg-gray-900 cursor-pointer
+                ${activeTab === "Posts" ? "border-b-4 border-blue-500" : "border-0"}
+                `}>
+              <li className='text-gray-500'>Posts</li>
+              <ChevronDown className='text-gray-400'/>
               </div>
-              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
-              <li>Replies</li>
+              <div className={`flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-900
+                ${activeTab === "Replies" ? "border-b-4 border-blue-500" : "border-0"}
+                `}>
+              <li className='text-gray-500' onClick={() => setActiveTab("Replies")}>Replies</li>
               </div>
-              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
-              <li>Reposts</li>
+              <div className={`flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-900
+                ${activeTab === "Reply" ? "border-b-4 border-blue-500" : "border-0"}
+                `}>
+              <li className='text-gray-500' onClick={() => setActiveTab("Reply")}>Reposts</li>
               </div>
-              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
-              <li>Media</li>
-
+              <div className={`flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-900
+                ${activeTab === "Media" ? "border-b-4 border-blue-500" : "border-0"}
+                `}>
+              <li className='text-gray-500' onClick={() => setActiveTab("Media")}>Media</li>
+                  
               </div>
             </ul>
           </nav>
         </div>
+      <div className='border-t-2 border-gray-900 w-full'/>
+
 
     </div>
   )
