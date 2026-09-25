@@ -1,4 +1,4 @@
-import { Calendar, ChevronRight, Search } from 'lucide-react'
+import { Calendar, ChevronRight, Search, X } from 'lucide-react'
 import React from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 
@@ -73,10 +73,34 @@ const page = () => {
           </div>
         </div>
 
-        <div className='flex w-full item-center justify-center'>
+        <div className='flex mt-2 w-full item-center justify-center'>
           <div className='flex flex-col w-full bg-green-900 px-3  h-[170px] mx-5 rounded-[12px]'>
-            <h1 className='font-bold text-[24px]'>You aren't verified yet</h1>
+            <div className='flex w-full items-center my-2 justify-between'>
+              <h1 className='font-bold text-[27px]'>You aren't verified yet</h1>
+            <X/>
+            </div>
+            <p className='text-gray-300'>Get verified for boosted replies, analytics, ad-free browsing, and more. Upgrade your profile now.</p>
+            <button className='cursor-pointer mt-3 py-2 w-[130px] text-[18px] font-bold text-black bg-white rounded-full'>Get Started</button>
         </div>
+        </div>
+        <div className='w-full flex items-center justify-center'>
+          <nav className='w-full flex items-center justify-center'>
+            <ul className='flex w-full justify-between items-center'>
+              <div className='flex justify-center items-center w-[25%] py-3 hover:bg-gray-400 cursor-pointer'>
+              <li>Posts</li>
+              </div>
+              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
+              <li>Replies</li>
+              </div>
+              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
+              <li>Reposts</li>
+              </div>
+              <div className='flex justify-center cursor-pointer items-center w-[25%] py-3 hover:bg-gray-500'>
+              <li>Media</li>
+
+              </div>
+            </ul>
+          </nav>
         </div>
 
     </div>
