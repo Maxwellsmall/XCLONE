@@ -3,13 +3,40 @@
 import { Calendar, ChevronDown, ChevronRight, Search, X } from 'lucide-react'
 import React, { useState } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
+import PostTextProps from "@/app/components/PostTextProps"
+import PostProps from "@/app/components/PostsProps"
+import { Ellipsis } from 'lucide-react'
+import Follow from "@/app/components/Followprops"
 
-
+  const followdata = [
+    {
+      id: 1,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+    {
+      id: 2,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    },
+      {
+      id: 3,
+      name: "Maxwell Edunfunke",
+      username: "@web3Threat",
+      description: "i am a fullstack web developer and also a web3 enthusiast building so big that in the coming year alot of people will know it",
+      image: "/vercel.svg"
+    } 
+  ]
 
 const page = () => {
   const [activeTab, setActiveTab] = useState<"Posts" | "Replies" | "Reply" | "Media">("Posts")
 
   return (
+ <>
     <div className="w-full flex flex-col">
 
       <div className="sticky top-0 z-50 w-full bg-black flex justify-between items-center px-5 py-2">
@@ -118,9 +145,36 @@ const page = () => {
           </nav>
         </div>
       <div className='border-t-2 border-gray-900 w-full'/>
-
-
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
     </div>
+
+      <div className="flex flex-col gap-4 px-4">
+                    <h1 className="font-semibold text-[22px] text-white">Who to follow </h1>
+                    <div className='flex flex-col gap-3'>
+                      {followdata.map((item) => (
+                        <Follow
+                          key={item.id}
+                          name={item.name}
+                          username={item.username}
+                          image={item.image}
+                          description={item.description}
+                        />
+                      ))}
+                    </div>
+            </div>
+            <div className='border-t-2 border-gray-900 w-full'/>
+
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+
+ </>
   )
 }
   export default page

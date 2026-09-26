@@ -37,6 +37,11 @@ const LeftSidebar = () => {
             <Mail className="h-6 w-6 text-white font-bold"/>
             <span className="text-[20px] font-bold">Grok</span>
           </Link>
+{/* 
+             <Link href="/history" className='flex items-center gap-3 my-5'>
+            <Mail className="h-6 w-6 text-white font-bold"/>
+            <span className="text-[20px] font-bold">History</span>
+          </Link> */}
           
            <Link href="/profile" className='flex items-center gap-3 my-5'>
             <User className="h-6 w-6 text-white font-bold"/>
