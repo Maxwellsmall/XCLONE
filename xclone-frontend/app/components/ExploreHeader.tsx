@@ -101,7 +101,7 @@ const ExploreHeader = () => {
               </div>
             ) : activeTab === "Sports" ? (
                 <div>Sports</div>
-            ) : activeTab ===    "Entertainments" ? (
+            ) : activeTab ===    "Entertainment" ? (
                 <div>
                   Entertainments
                 </div>
