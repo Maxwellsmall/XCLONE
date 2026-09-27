@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tweet, TweetMedia, Like, Retweet, Bookmark, Follow, Notification
+from .models import Tweet, TweetMedia, Like, Retweet, Bookmark, Follow, Notification, Coversation, Message
 from django.contrib.auth import get_user_model
 # from django.contrib.auth.models import User
 
@@ -152,4 +152,19 @@ class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
         fields = ['id', 'sender', 'notification_type', 'tweet_id', 'is_read', 'created_at']
-        read_only_fields = ['sender', 'notification_type', 'tweet_id', 'created_at']
+        read_only_fields = ['id', 'sender', 'notification_type', 'tweet_id', 'created_at']
+
+
+class CoversationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coversation
+        fields = ['id', 'participants', 'created_at', 'updated_at']
+        read_only_fields = ['participants', 'created_at', 'updated_at']
+
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  Message
+        fields = ['id', 'conversation', 'sender', 'content', 'is_read', 'created_at']
+        read_only_fields = ['conversation', 'sender', 'is_read', 'created_at']
+

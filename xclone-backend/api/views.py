@@ -5,12 +5,11 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from django.db.models import Count, Q, Exists, OuterRef
-from .models import Tweet, Like, Retweet, Bookmark, Follow, Notification
-from .serializers import TweetSerializer, UserProfileSerializer, NotificationSerializer
+from .models import Tweet, Like, Retweet, Bookmark, Follow, Notification, Conversation, Message
+from .serializers import TweetSerializer, UserProfileSerializer, NotificationSerializer, ConversationSerializer, MessageSerializer
 from drf_spectacular.utils import extend_schema
 from django.db.models import F
 from drf_spectacular.utils import extend_schema
-
 
 User = get_user_model()
 
@@ -200,3 +199,25 @@ class NotificationViewSet(viewsets.ReadOnlyModelViewSet):
         notification.save()
         return Response({"detail": "Notification marked as read."}, status=status.HTTP_200_OK)
     
+
+class ConversationViewSet(viewsets.ModelViewset):
+    permissions_classes = [permissions.IsAuthenticated]
+    serializer_class = ConversationSerializer
+
+    # def get_queryset(self):
+    #     return Conversation.objects.filter(participants=self.request.user).select_related('conversa')
+
+
+class MessageViewSet(viewsets.ModelViewSet):
+    permissions_classes = [permissions.IsAuthenticated]
+    serializer_class = MessageSerializer
+
+    def get_query(self):
+        return Message.objects.filter(sender=self.request.user).select_related('sender', 'conversation')
+
+    
+    @extend_schema(summary="Mark all messages as read")
+    @action(detail=False, methods=['post'])
+    def mark_all_as_read(self,request):
+        self.get_query().filter(is_read=False).update(is_read=True)
+        return Response({"detail": "All notifications marked as read."}, status=status.HTTP_200_OK)
