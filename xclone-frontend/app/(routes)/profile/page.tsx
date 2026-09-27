@@ -150,7 +150,7 @@ const page = () => {
       <div className='border-t-2 border-gray-900 w-full'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
         <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
-        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent={image} comment='28' tweet='39' likes='599' Views='900'/>
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='/public/images/cover.png' comment='28' tweet='39' likes='599' Views='900'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
     </div>
