@@ -7,6 +7,8 @@ import PostTextProps from "@/app/components/PostTextProps"
 import PostProps from "@/app/components/PostsProps"
 import { Ellipsis } from 'lucide-react'
 import Follow from "@/app/components/Followprops"
+import image from "@/public/images/cover.png"
+
 
   const followdata = [
     {
@@ -60,12 +62,13 @@ const page = () => {
       </div>
 
         <div className='flex flex-col justify-center items-center'>
-          <div className="w-full h-[200px] bg-gray-500">
-
+          <div className="w-full h-[200px]">
+              <img src="/images/cover.png" alt="" className='w-full h-full object-cover overflow-hidden' />
           </div>
          <div className="w-full px-2 relative flex justify-end items-start h-[150px]">
   
-  <div className="w-[120px] h-[120px] absolute -top-16 left-4 rounded-full bg-gray-600 border-[3px] border-black">
+  <div className="w-[120px] h-[120px] absolute -top-16 left-4 rounded-full border-[3px] border-black">
+          <img src="/images/cover.png" alt="" className='w-full h-full object-cover rounded-full overflow-hidden' />
   </div>
 
   <div className="flex flex-col absolute left-4 top-[70px]">
@@ -78,7 +81,7 @@ const page = () => {
     </p>
   </div>
 
-  <button className="py-2 px-5 bg-black rounded-full border border-gray-500 font-semibold">
+  <button className="py-2 px-5 bg-black rounded-full border border-gray-500 font-semibold mt-7">
     Edit Profile
   </button>
 
@@ -147,7 +150,7 @@ const page = () => {
       <div className='border-t-2 border-gray-900 w-full'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
         <PostProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
-        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
+        <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent={image} comment='28' tweet='39' likes='599' Views='900'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
         <PostTextProps Icons={<Ellipsis/>} Name='Maxwell Edunfuke' UserName='web3Threat' time='-6h' TextContent='This is a sample post content.' ImageContent='' comment='28' tweet='39' likes='599' Views='900'/>
     </div>
