@@ -78,3 +78,17 @@ rules:
     && !("enforcement_threshold_reached" in score.labels)
     then:
       kind: act_arkose
+
+  - id: act_cusp_captcha
+    when: >
+      "enforcement_cusp_arkose" in score.labels 
+      && !("enforcement_threshold_reached" in score.labels)
+  then: 
+    kind: act_cusp_captcha
+
+- id: act_cusp_liveness 
+  when: >
+  "enforcement_threshold_reached" in  score.labels
+  && !("enforcement_threshold_reached" in score.labels)
+
+  # x algorithm for post reconedatoiggde ihhhhihbpppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppi b dkggwgg
