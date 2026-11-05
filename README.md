@@ -16,3 +16,4 @@ Styling: Tailwind CSS
 UI Components: Shadcn UI
 Icons: Lucide React
 Package Manager: pnpm
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/00f320bc-f115-42dc-b9e5-bf13777b2bc5" />
